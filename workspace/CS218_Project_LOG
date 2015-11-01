@@ -1,0 +1,20 @@
+CS218_Project_LOG
+##################################################
+# GNU Radio Log
+# Generated: Sun Nov  1 13:19:30 2015
+##################################################
+
+# File: Wifi Loopback
+10/31- 	TS created ~/workspace dir in /home/project/src/gr-ieee-802-11
+	Dir contains wifi_loopback.py with variables for:
+	--chan-est	--encoding	--freq-offset	--interval	--pdu-length	--snr
+	Dir contains wifi_loopback_noGUI.grc for GUI reference in GRC.
+	Dir contains awgn.grc as work-in-progress.
+11/01-	DM modified wifi_loopback_noGUI.grc <File Sink> block to enable pcap files in /tmp dir.
+	pcap file renamed to 'sim.csv'; enabled <Wireshark Connector> block and linked
+	<Message Strobe = strobe> & <WIFI PHY Hier = mac_out> to <Wireshark Connector = in>
+	Successfully tested output file 'sim.pcap' with tshark.
+# NOTE: Conversion from pcap to csv may have to be mapped in makefile. Tshark can read 'sim.csv'
+	but contents were unreadable in any other program I tried. I left output file as .csv by
+	default, but it can easily be changed to .pcap file from the wifi_loopback_noGUI.grc <File
+	Sink> block.
